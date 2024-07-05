@@ -22,8 +22,8 @@ def predict_charges(model, age, sex, bmi, children, smoker, region):
     prediction = model.named_steps['regressor'].predict(transformed_data)[0]
     return prediction
 
-st.set_page_config(page_title="Insurance Charges Prediction")
-st.title('Insurance Charges Prediction')
+st.set_page_config(page_title="Health Insurance Charges Prediction")
+st.title('Health Insurance Charges Prediction')
 
 age = st.number_input('Age:', min_value=0)
 sex = st.selectbox('Sex:', ['male', 'female'])
