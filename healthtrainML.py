@@ -1,5 +1,5 @@
 import pandas as pd
-import pickle
+import joblib
 import sklearn
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -45,6 +45,5 @@ print(f"Mean Absolute Error: {mae}")
 print(f"Mean Squared Error: {mse}")
 print(f"R-squared: {r2}")
 
-with open('health_gbr.pkl', 'wb') as f:
-    pickle.dump(pipeline, f)
+joblib.dump(pipeline, 'health_gbr.joblib')
 
