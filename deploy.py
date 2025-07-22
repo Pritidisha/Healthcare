@@ -1,10 +1,9 @@
 import pandas as pd
 import streamlit as st
-import pickle
+import joblib
 import sklearn
 
-with open('health_gbr.pkl', 'rb') as f:
-    model = pickle.load(f)
+model = joblib.load('health_gbr.joblib')
 
 def predict_charges(model, age, sex, bmi, children, smoker, region):
     user_data = pd.DataFrame({
